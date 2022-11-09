@@ -1,0 +1,29 @@
+/* Alt + shift + a: para comentar */
+
+
+/* Hay que resetear los valores por defecto de los navegadores */
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    /* El box sizing nos ayuda a que las medidas de ancho y alto se mantengan, por ejemplo si quiero un div de 300px, aun si pongo margin o padding, esa medida se va a mantener, si no lo tuviera, esos 300px + padding se modificaría */
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+h1 {
+    color: lightsalmon;
+}
+
+.form-group {
+    width: 400px;
+    background-color: lightcoral;
+}
+
+input,
+textarea {
+    padding: 5px;
+    margin: 5px;
+    width: 90%;
+}

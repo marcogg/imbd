@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintaxis HTML</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/tw.png">
+    <script src="code.js"></script>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+            padding: 15px;
+            border-collapse: collapse;
+        }
+    </style>
+    <style>
+        #bio {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display:none;">
+        <div>
+            <h1>Hola mundo!</h1>
+            <h2>Padre</h2>
+            <h3>Hijo</h3>
+            <h3>Hijo</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci error ea repellat porro, odio natus nam, veniam itaque fuga vitae temporibus officia ab consequuntur hic nulla asperiores assumenda possimus facere.</p>
+        </div>
+
+
+        <hr>
+        <ol>
+            <li>Leche</li>
+            <li>Arepas</li>
+            <li>Azúcar</li>
+            <li>Papas</li>
+            <li>Sal</li>
+        </ol>
+
+        <h1>Lista no ordenada</h1>
+        <ul>
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Nosotros</a>
+            </li>
+            <li>
+                <a href="#">Productos</a>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+        </ul>
+
+        <hr>
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Nombre</td>
+                <td>Ciudad</td>
+                <td>Foto</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Marco</td>
+                <td>CDMX</td>
+                <td>
+                    <img src="./" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Marco</td>
+                <td>CDMX</td>
+            </tr>
+        </table>
+    </div>
+    <div class="form-group">
+        <form action="signup" method="post">
+            <!-- El for hace una referencia a lo que vamos a procesar -->
+            <label for="first">Name</label>
+            <input maxlength="7" type="text" id="first">
+            <br>
+            <label for="last">Last</label>
+            <input type="text" id="last">
+            <br>
+            <label for="email">E-mail</label>
+            <input type="email" id="email">
+            <br>
+            <label for="confirmation">Acepto las condiciones</label>
+            <input type="radio" name="confirmation" id="">
+            <br>
+            <textarea id="bio">Text here</textarea>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+</body>
+
+</html>
