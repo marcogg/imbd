@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Palanquin+Dark:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/layout.css">
 </head>
 
@@ -23,10 +23,10 @@
     <main>
         <section>
             <div class="container">
-                <div class="row w-100">
+                <div class="row">
                     <div class="col-12">
-                        <h2>Hola Profe!</h2>
-                        <p>Da de alta a tus alumnos</p>
+                        <h2 class="text-white">Hola Profe!</h2>
+                        <p class="text-white">Da de alta a tus alumnos</p>
                     </div>
                 </div>
             </div>
@@ -34,8 +34,8 @@
                 <div class="row">
                     <div class="form card">
                         <form>
-                            <input type="text" placeholder="Nombre" id="name" required>
-                            <input type="text" placeholder="Apellido" id="lastname" required>
+                            <input type="text" placeholder="Nombre" id="firstName" required>
+                            <input type="text" placeholder="Apellido" id="lastName" required>
                             <input type="number" id="age" placeholder="Edad" required>
                             <label>
                                 Selecciona una de las materias para inscribirlo
@@ -49,19 +49,56 @@
                             <input type="number" placeholder="Calificación" id="score">
                         </form>
                         <button type="button" id="submit" onclick="addStudent()">Agregar</button>
+                        <p id="message"></p>
                     </div>
                 </div>
             </div>
         </section>
         <section>
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Tus alumnos inscritos</h4>
+                <div class="row w-100">
+                    <div class="col-6">
+                        <div class="row w-100 align-items-center">
+                            <form class="search">
+                                <label>Buscar por nombre
+                                    <input type="text" id="searchInput">
+                                </label>
+                            </form>
+                            <button class="mt-6" onclick="searchByName()">Buscar</button>
+                            <p id="messageSearchByName"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row w-100 align-items-center">
+                            <form class="search">
+                                <label>Buscar por apellido
+                                    <input type="text" id="searchInputLast">
+                                </label>
+                            </form>
+                            <button class="mt-6" onclick="searchByLast()">Buscar</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row w-100 align-items-center">
                     <div class="col-12">
+                        <h4 class="text-left text-white">Tus alumnos inscritos</h4>
+                    </div>
+                </div>
+                <div class="row align-items-center w-100 justify-content-center card">
+                    <div class="col-6">
+                        <div class="row align-items-center">
+                            <button class="flex-end" id="getAvgGroup">Obtener promedio grupal</button>
+                            <p id="average" class="mx-5 fs-2"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row justify-content-space-around align-items-center">
+                            <p onclick="sortDecreasing()" id="decreasing">De mayor a menor</p>
+                            <p onclick="sortIncreasing()" id="increasing">De menor a mayor</p>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12">
                         <table>
                             <thead>
                                 <tr>
@@ -70,16 +107,12 @@
                                     <td>Edad</td>
                                     <td>Materia</td>
                                     <td>Calificacion</td>
+                                    <!-- <td>Promedio</td> -->
+                                    <td>Editar</td>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                            <tbody id="studentsList">
+                                <!-- dynamic students -->
                             </tbody>
                         </table>
                     </div>
@@ -87,6 +120,21 @@
                 </div>
             </div>
         </section>
+        <div class="modal-container">
+            <div id="modal" class="modal">
+                <div class="row w-100 justify-content-center">
+                    <div class="modalBox">
+                        <div class="col-2 flex-end">
+                            <p id="closeModal" class="close">Cerrar</p>
+                        </div>
+                        <div class="col-12">
+                            <table id="results" class="mt-5">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="./js/classes.js"></script>
 </body>

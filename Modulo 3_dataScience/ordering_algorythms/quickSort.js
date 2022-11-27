@@ -1,17 +1,17 @@
-const quickSort = (arr) => {
-    if (arr.length <= 1) {
-        return arr
+const quickSort = (nums) => {
+    if (nums.length <= 1) {
+        return nums
     }
 
-    let pivot = arr[0]
+    let pivot = nums[0]
     let left = []
     let right = []
 
-    for (let i = 1; i < arr.length; i++) {
+    for (let i = 1; i < nums.length; i++) {
         if (arr[i] < pivot) {
-            left.push(arr[i])
+            left.push(nums[i])
         } else {
-            right.push(arr[i])
+            right.push(nums[i])
         }
     }
 
