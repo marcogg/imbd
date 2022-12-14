@@ -1,5 +1,5 @@
 function presentacion(nombre, apellido, callback) {
-    return callback(`Hola ${nombre} alias ${apellido}`)
+    return callback(`Hola ${nombre} de apellido ${apellido}`)
 }
 
 function soy(txt) {
