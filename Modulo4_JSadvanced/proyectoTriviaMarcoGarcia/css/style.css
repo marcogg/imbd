@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #221533;
+}
+
+.background-animation {
+    background: linear-gradient(-45deg, #800080, #00d6d6);
+    background-repeat: no-repeat;
+    background-size: 400% 400%;
+    height: 100vh;
+    animation: animatedBg 5s ease infinite;
+}
+
+@keyframes animatedBg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1 {
+    color: #593c7e;
+    margin-top: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: rgba( 255, 255, 255, 0.45);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 12.5px);
+    -webkit-backdrop-filter: blur( 12.5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    padding: 15px;
+    width: 30%;
+    max-width: 600px;
+    align-items: center;
+}
+
+.btn-begin {
+    background: linear-gradient(-45deg, #800080, #ab00d6);
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: #ebb2f9;
+    font-size: 18px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}

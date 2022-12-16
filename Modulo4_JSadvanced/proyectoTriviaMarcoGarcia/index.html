@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia app | Marco García</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,800;0,900;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="background-animation">
+    <main>
+        <section>
+            <div class="card">
+                <div class="row justify-content-center">
+                    <img src="./img/triviapp.svg" class="logo">
+                </div>
+                <div class="row justify-content-center">
+                    <h1 class="text-center">Configura tu partida</h1>
+                </div>
+                <form>
+                    <label for="amountQuestions">Selecciona una cantidad de preguntas</label>
+                    <select name="amountQuestions" id="amountQuestions" class="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <label for="difficulty">Selecciona una dificultad</label>
+                    <select name="difficulty" id="difficulty" class="w-100">
+                        <option value="Cualquiera">Cualquiera</option>
+                        <option value="Fácil">Fácil</option>
+                        <option value="Intermedio">Intermedio</option>
+                        <option value="Dificil">Dificil</option>
+                    </select>
+                    <label for="questionType">Tipo de pregunta</label>
+                    <select name="questionType" id="questionType">
+                        <option value="multipleOption">Opción múltiple</option>
+                        <option value="trueFalse">Verdadero / Falso</option>
+                    </select>
+                    <input type="submit" value="Empezar" class="btn-begin">
+                </form>
+
+            </div>
+
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
