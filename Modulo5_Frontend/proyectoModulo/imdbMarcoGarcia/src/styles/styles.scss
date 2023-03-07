@@ -4,3 +4,22 @@
     top: 0;
     left: 0;
 }
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // background: linear-gradient(45deg, #151515, #362b2b);
+    width:100vw;
+    height:500px;
+    background-image: url(../bg-app.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & .form-row{
+        display: flex;
+        flex-direction: row;
+    }
+}
