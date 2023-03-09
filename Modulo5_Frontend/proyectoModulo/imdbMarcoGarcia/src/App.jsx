@@ -1,5 +1,6 @@
 
 // import { useState } from 'react'
+import { useEffect } from 'react'
 import { Footer } from './components/footer'
 import { Hero } from './components/hero'
 import MovieCard from './components/movieCard'
@@ -8,33 +9,37 @@ import { useShows } from './hooks/useShows'
 // import { searchSeries } from './services/searchSeries'
 
 function App () {
-  const { bringShowList, search } = useShows()
-  // const [showSearch, setShowSearch] = useState([])
+  const { isLoading, bringShowList } = useShows()
 
-  const mappingShows =
-    search.map((series, index) => ({
+  const mappingShows = async () => {
+    const mapShows = await bringShowList.map((series, index) => ({
+      ...series,
       id: series[index].show.id,
       title: series[index].show.name,
       score: series[index].score,
       img: series[index].show.image.original
-    })
-    )
-    // setShowSearch(showSearch)
-    // console.log('mapping')
+    }))
+    return mapShows
+  }
+  useEffect(() => {
+
+  })
+  // setShowSearch(showSearch)
+  // console.log('mapping')
 
   return (
     <div className='App'>
       <Navbar />
-      <Hero handleSubmit={bringShowList} />
+      <Hero />
       <div className='container'>
         <div className='row'>
           <div className='col-12 bg-dark'>
-            {mappingShows.length !== 0 &&
-              mappingShows.map(series => (
-                <aside key={series.id}>
-                  <MovieCard title={series.title} score={series.score} img={series.img} />
-                </aside>
-              ))}
+            {isLoading && <p>Loading...</p>}
+            {!isLoading && mappingShows(series => (
+              <aside key={series.id}>
+                <MovieCard {...series} />
+              </aside>
+            ))}
           </div>
         </div>
       </div>

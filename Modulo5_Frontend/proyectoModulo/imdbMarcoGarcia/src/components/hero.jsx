@@ -1,7 +1,8 @@
 // import { searchSeries } from '../services/searchSeries'
-// import { useShows } from '../hooks/useShows'
+import { useShows } from '../hooks/useShows'
 
-export const Hero = ({ handleSubmit }) => {
+export const Hero = () => {
+  const { bringShowList } = useShows()
   return (
     <div className='hero container-fluid'>
       <div className='row'>
@@ -11,7 +12,7 @@ export const Hero = ({ handleSubmit }) => {
       </div>
       <div className='row mt-5'>
         <div className='col-12'>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={bringShowList}>
             <div className='form-row'>
               <input name='search-input' className='form-control form-control-lg' type='text' placeholder='buscar' aria-label='.form-control-lg example' />
               <button className='btn btn-outline-danger' type='submit'>Buscar</button>

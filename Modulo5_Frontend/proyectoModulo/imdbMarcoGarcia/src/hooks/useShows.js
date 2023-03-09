@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 export const useShows = () => {
   const [search, setSearch] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const bringShowList = async (event) => {
     event.preventDefault()
@@ -16,8 +17,13 @@ export const useShows = () => {
       // return search
     } catch (error) {
       console.log(error)
+    } finally {
+      setIsLoading(false)
     }
-    return { search, setSearch }
   }
-  return { bringShowList, search }
+
+  // useEffect(() => {
+  //   bringShowList()
+  // }, [])
+  return { bringShowList, search, isLoading, setIsLoading }
 }
