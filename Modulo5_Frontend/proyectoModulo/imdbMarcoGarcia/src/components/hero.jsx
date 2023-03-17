@@ -1,8 +1,8 @@
-// import { searchSeries } from '../services/searchSeries'
 import { useShows } from '../hooks/useShows'
 
 export const Hero = () => {
   const { bringShowList } = useShows()
+
   return (
     <div className='hero container-fluid'>
       <div className='row'>
