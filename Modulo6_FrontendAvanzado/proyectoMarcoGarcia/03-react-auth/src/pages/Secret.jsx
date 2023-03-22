@@ -1,8 +1,15 @@
-import React from 'react'
+import {useAuthContext} from '@/context/AuthContext'
 
 const Secret = () => {
   return (
-    <div>Secret</div>
+  <>
+    <h1>Secret</h1>
+    {
+      userPayLoad.role === 'ADMIN'
+      ? <h1>Hola Admin</h1>
+      : <h1>Hola Usuario</h1>
+    }
+  </>
   )
 }
 
