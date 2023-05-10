@@ -8,14 +8,13 @@ const AuthContext = createContext()
 const AuthProvider = (props) => {
   const [isAuth, setIsAuth] = useState(false) // ¿Estoy autenticado?
   const [userPayload, setUserPayload] = useState(null) // JWT payload decodificado
+
   const login = (token) => {
-    if(token){
-        // Guardar el token en el local storage
-        window.localStorage.setItem('token', token)
-        // Decodificar el token
-        const decoded = jwt_decode(token)
-        setUserPayload(decoded)
-        setIsAuth(true)
+    if (token) {
+      window.localStorage.setItem('token', token) // Guardar el token en el local storage
+      const decoded = jwt_decode(token) // Decodificar el token
+      setUserPayload(decoded)
+      setIsAuth(true)
     }
   }
 
@@ -26,11 +25,15 @@ const AuthProvider = (props) => {
     setIsAuth(false)
   }
 
-//   useEffect(() => {
-//     // recuperar el token si existe en el local storage, si no existe devolvera null
-//     const token = window.localStorage.getItem('token')
-//     login(token)
-//   }, [])
+  useEffect(() => {
+    // recuperar el token si existe en el local storage, si no existe devolvera null
+    const token = window.localStorage.getItem('token')
+    if (token) {
+      const decoded = jwt_decode(token) // Decodificar el token
+      setUserPayload(decoded)
+      setIsAuth(true)
+    }
+  }, [])
 
   const values = {
     login,
